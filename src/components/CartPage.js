@@ -7,7 +7,7 @@ const CartPage = (props) => {
   return (
     <div className="container">
       <h1>Your Cart</h1>
-      <Cart cart={cart} />
+      <Cart cart={cart} setCart={setCart} />
     </div>
   )
 }

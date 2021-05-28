@@ -1,7 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Nav = () => {
+const Nav = (props) => {
+  const { cart } = props;
+
+  const showCartSize = (cart) => {
+    if (cart.length > 0) {
+      return <h3>Cart {cart.length}</h3>
+    } else {
+      return <h3>Cart</h3>
+    }
+  }
+
   return (
     <nav>
       <div className="nav nav-left">
@@ -11,7 +21,7 @@ const Nav = () => {
         <h3>Something</h3>
       </div>
       <div className="nav nav-right">
-        <Link to='/cart'><h3>Cart</h3></Link>
+        <Link to='/cart'>{showCartSize(cart)}</Link>
       </div>
     </nav>
   )

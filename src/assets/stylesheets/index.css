@@ -38,6 +38,14 @@ a:link {
   align-items: center;
 }
 
+.feed {
+  width: 60%;
+}
+
+.in-cart {
+  width: 50%;
+}
+
 .card {
   display: flex;
   flex-direction: column;

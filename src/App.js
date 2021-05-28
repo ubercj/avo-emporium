@@ -9,7 +9,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav cart={cart} />
       <Switch>
         <Route exact path="/"
         render={() => 
