@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import CartCard from './CartCard';
 
 const Cart = (props) => {
   const { cart, setCart } = props;
@@ -18,20 +19,10 @@ const Cart = (props) => {
     calculateTotal();
   })
 
-  const removeFromCart = (product, cart) => {
-    const newCart = cart.filter((item) => item !== product);
-    setCart(newCart);
-  }
-
   const showCartContents = (cart) => {
     return cart.map((product) => {
       return (
-        <div key={product.id} className="card in-cart">
-          <h4>{product.title}</h4>
-          <p>Count: {product.count} | Price: ${product.price}</p>
-          <p>Total Cost: {product.count * product.price}</p>
-          <button onClick={() => removeFromCart(product, cart)}>Remove</button>
-        </div>
+        <CartCard key={product.id} cart={cart} setCart={setCart} product={product} />
       );
     })
   }
