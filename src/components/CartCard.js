@@ -38,7 +38,7 @@ const CartCard = (props) => {
       return (
         <div>
           <label>
-            Count:
+            Quantity:
             <input
               type="number" min="0" value={count}
               onChange={handleChange}
@@ -61,8 +61,13 @@ const CartCard = (props) => {
     <div className="card in-cart">
       <h4>{product.title}</h4>
       {displayCount(wantToChange)}
-      <p>Total Cost: {product.count * product.price}</p>
-      <button onClick={() => removeFromCart(product, cart)}>Remove</button>
+      <p>Price: ${Number(product.price).toFixed(2)}</p>
+      <p>Total Cost: ${(product.count * product.price).toFixed(2)}</p>
+      <button
+        className="card-bottom"
+        onClick={() => removeFromCart(product, cart)}>
+          Remove
+        </button>
     </div>
   );
 }

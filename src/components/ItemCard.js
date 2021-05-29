@@ -42,9 +42,9 @@ const ItemCard = (props) => {
 
   const showAddButton = () => {
     if (count > 0) {
-      return <button onClick={handleClick}>Add to cart</button>
+      return <button className="card-bottom" onClick={handleClick}>Add to cart</button>
     } else {
-      return <button disabled onClick={handleClick}>Add to cart</button>
+      return <button className="card-bottom" disabled onClick={handleClick}>Add to cart</button>
     }
   }
 
@@ -52,9 +52,9 @@ const ItemCard = (props) => {
     <div className="card">
       <h2>{product.title}</h2>
       <div>
-        <p>Price: ${product.price}</p>
+        <p>Price: ${Number(product.price).toFixed(2)}</p>
         <label>
-          Count:
+          Quantity:
           <input
             type="number" min="0" value={count}
             onChange={handleChange}

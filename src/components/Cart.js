@@ -29,10 +29,10 @@ const Cart = (props) => {
 
   return (
     <div className="feed card">
-      <h2>Cart total: ${total}</h2>
+      <h2>Cart total: ${total.toFixed(2)}</h2>
       {showCartContents(cart)}
       <Link to="/checkout">
-        <button className="checkout">Checkout</button>
+        <button className="card-bottom">Checkout</button>
       </Link>
     </div>
   )

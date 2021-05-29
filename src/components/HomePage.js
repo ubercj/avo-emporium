@@ -12,6 +12,10 @@ const HomePage = (props) => {
         <ItemCard cart={cart} setCart={setCart} product={inventory.toaster}/>
         <ItemCard cart={cart} setCart={setCart} product={inventory.avocado}/>
         <ItemCard cart={cart} setCart={setCart} product={inventory.bread}/>
+        <ItemCard cart={cart} setCart={setCart} product={inventory.spoon}/>
+        <ItemCard cart={cart} setCart={setCart} product={inventory.butterKnife}/>
+        <ItemCard cart={cart} setCart={setCart} product={inventory.chefsKnife}/>
+        <ItemCard cart={cart} setCart={setCart} product={inventory.eggs}/>
       </section>
     </div>
   )
