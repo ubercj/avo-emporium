@@ -1,19 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Cart = (props) => {
   const { cart, setCart } = props;
 
-  const removeFromCart = (item, cart) => {
-    const newCart = cart.filter((product) => product !== item);
+  const [total, setTotal] = useState(0);
+
+  const calculateTotal = () => {
+    const newTotal = cart.reduce((sum, item) => {
+      const net = item.count * item.price;
+      return sum + net;
+    }, 0);
+    setTotal(newTotal);
+  }
+
+  useEffect(() => {
+    calculateTotal();
+  }, [cart])
+  
+
+  const removeFromCart = (product, cart) => {
+    const newCart = cart.filter((item) => item !== product);
     setCart(newCart);
   }
 
   const showCartContents = (cart) => {
-    return cart.map((item, index) => {
+    return cart.map((product) => {
       return (
-        <div key={index} className="card in-cart">
-          <h4>{item}</h4>
-          <button onClick={() => removeFromCart(item, cart)}>Remove</button>
+        <div key={product.id} id={product.id} className="card in-cart">
+          <h4>{product.title}</h4>
+          <p>Count: {product.count} Price: ${product.price}</p>
+          <p>Total Cost: {product.count * product.price}</p>
+          <button onClick={() => removeFromCart(product, cart)}>Remove</button>
         </div>
       );
     })
@@ -21,7 +38,7 @@ const Cart = (props) => {
 
   return (
     <div className="feed card">
-      <h2>Cart:</h2>
+      <h2>Cart total: ${total}</h2>
       {showCartContents(cart)}
     </div>
   )
