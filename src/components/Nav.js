@@ -14,15 +14,15 @@ const Nav = (props) => {
 
   return (
     <nav>
-      <div className="nav nav-left">
-        <Link to='/'><h3>Home</h3></Link>
-      </div>
+      <Link to='/' className="Link">
+        <div className="nav nav-left"><h3>Home</h3></div>
+      </Link>
       <div className="nav nav-center">
         <h3>Something</h3>
       </div>
-      <div className="nav nav-right">
-        <Link to='/cart'>{showCartSize(cart)}</Link>
-      </div>
+      <Link to='/cart' className="Link">
+        <div className="nav nav-right">{showCartSize(cart)}</div>  
+      </Link>
     </nav>
   )
 }

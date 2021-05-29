@@ -10,6 +10,14 @@ const ItemCard = (props) => {
     setCount(e.target.value);
   }
 
+  const handleClick = () => {
+    if (cart.find((item) => item.prodId === product.prodId)) {
+      increaseCount(cart, product, count);
+    } else {
+      addToCart(product, count);
+    }
+  }
+
   const increaseCount = (cart, product, count) => {
     const prodInCart = cart.find((item) => item.prodId === product.prodId);
     const prodIdx = cart.indexOf(prodInCart);
@@ -24,24 +32,19 @@ const ItemCard = (props) => {
     setCount(0);
   }
 
-  const addToCart = () => {
-    if (cart.find((item) => item.prodId === product.prodId)) {
-      increaseCount(cart, product, count);
-    } else {
+  const addToCart = (product, count) => {
     const newProduct = {...product};
     newProduct.id = uniqid();
     newProduct.count = count;
     setCount(0);
     setCart((prevCart) => [...prevCart, newProduct]);
-    console.log(`End of function. Product id is ${newProduct.prodId}`);
-    }
   }
 
   const showAddButton = () => {
     if (count > 0) {
-      return <button onClick={addToCart}>Add to cart</button>
+      return <button onClick={handleClick}>Add to cart</button>
     } else {
-      return <button disabled onClick={addToCart}>Add to cart</button>
+      return <button disabled onClick={handleClick}>Add to cart</button>
     }
   }
 

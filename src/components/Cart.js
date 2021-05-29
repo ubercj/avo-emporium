@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Cart = (props) => {
   const { cart, setCart } = props;
@@ -27,7 +28,7 @@ const Cart = (props) => {
       return (
         <div key={product.id} className="card in-cart">
           <h4>{product.title}</h4>
-          <p>Count: {product.count} Price: ${product.price}</p>
+          <p>Count: {product.count} | Price: ${product.price}</p>
           <p>Total Cost: {product.count * product.price}</p>
           <button onClick={() => removeFromCart(product, cart)}>Remove</button>
         </div>
@@ -39,6 +40,9 @@ const Cart = (props) => {
     <div className="feed card">
       <h2>Cart total: ${total}</h2>
       {showCartContents(cart)}
+      <Link to="/checkout">
+        <button className="checkout">Checkout</button>
+      </Link>
     </div>
   )
 }
