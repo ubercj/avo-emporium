@@ -1,5 +1,5 @@
-const product = (prodId, title, price) => {
-  return { prodId, title, price }
+const product = (prodId, title, description, price) => {
+  return { prodId, title, description, price }
 }
 
 export default product;

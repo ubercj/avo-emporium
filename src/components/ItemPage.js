@@ -19,7 +19,11 @@ const ItemPage = (props) => {
 
   return (
     <div className="container">
-      <ItemCard cart={cart} setCart={setCart} product={product} productPage={true} />
+      <div className="card product">
+        <h1>{product.title}</h1>
+        <p className="description">{product.description}</p>
+        <ItemCard cart={cart} setCart={setCart} product={product} productPage={true} />
+      </div>
     </div>
   )
 }

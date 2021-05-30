@@ -49,30 +49,43 @@ const ItemCard = (props) => {
     }
   }
 
-  const showLink = () => {
+  const renderPage = () => {
     if (productPage) {
-      return <Link to="/">Back</Link>;
+      return (
+        <div className="container">
+          <p>Price: ${Number(product.price).toFixed(2)}</p>
+          <label>
+            Quantity:
+            <input
+              type="number" min="0" value={count}
+              onChange={handleChange}
+            />
+          </label>
+          <Link to="/">Back</Link>
+          {showAddButton()}
+        </div>
+      );
     } else {
-      return <Link to={`/products/${product.prodId}`}>More info</Link>;
+      return (
+        <div className="card">
+          <h2>{product.title}</h2>
+          <p>Price: ${Number(product.price).toFixed(2)}</p>
+          <label>
+            Quantity:
+            <input
+              type="number" min="0" value={count}
+              onChange={handleChange}
+            />
+          </label>
+          <Link to={`/products/${product.prodId}`}>More info</Link>
+          {showAddButton()}
+        </div>
+      );
     }
   }
 
   return (
-    <div className="card">
-      <h2>{product.title}</h2>
-      <div>
-        <p>Price: ${Number(product.price).toFixed(2)}</p>
-        <label>
-          Quantity:
-          <input
-            type="number" min="0" value={count}
-            onChange={handleChange}
-          />
-        </label>
-      </div>
-      {showLink()}
-      {showAddButton()}
-    </div>
+    renderPage()
   )
 }
 
