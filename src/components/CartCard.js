@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import photos from '../modules/photos';
+
 const CartCard = (props) => {
   const { cart, setCart, product } = props;
 
   const [count, setCount] = useState(product.count);
   const [wantToChange, setWantToChange] = useState(false);
+
+  const photoList = photos.map((photo) => photo.default);
 
   const handleChange = (e) => {
     setCount(e.target.value);
@@ -64,12 +70,14 @@ const CartCard = (props) => {
   return (
     <div className="card in-cart">
       <h4>{product.title}</h4>
+      <img src={photoList[product.prodId]} alt={product.title} className="small-pic" />
       {displayCount(wantToChange)}
       <p>Price: ${Number(product.price).toFixed(2)}</p>
       <p>Total Cost: ${calculateTotal().toFixed(2)}</p>
       <button
         className="card-bottom"
         onClick={() => removeFromCart(product, cart)}>
+          <FontAwesomeIcon icon={faTrash} className="icon" />
           Remove
         </button>
     </div>

@@ -20,6 +20,12 @@ As I was conceptualizing an online store, I was thinking about a real store: The
 
 So, this is the approach I took with the items, i.e. creating a factory function called `product` for creating new products and a module called `inventory` that creates each type of product. Those products are then passed into components on the main store page. Breaking these out into their own files might have been overkill, but it made sense to me conceptually.
 
+#### Importing images
+
+[React documentation](https://create-react-app.dev/docs/using-the-public-folder)
+[webpack documentation](https://webpack.js.org/guides/dependency-management/#require-context)
+[Stack Overflow thread](https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack)
+
 ### Handling item quantities in the shopping cart
 
 In my first iteration of the shopping cart, if I adjusted the quantity to add 2 toasters to my cart, it would show up as one item. BUT, if I added a single toaster twice, it would show up as two distinct items in the cart. This bothered me, because this isn't how shopping carts work in real-world websites.

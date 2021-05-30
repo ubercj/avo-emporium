@@ -2,10 +2,16 @@ import React, { useState } from 'react';
 import uniqid from 'uniqid';
 import { Link } from 'react-router-dom';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import photos from '../modules/photos';
+
 const ItemCard = (props) => {
   const { cart, setCart, product, productPage } = props;
 
   const [count, setCount] = useState(0);
+
+  const photoList = photos.map((photo) => photo.default);
 
   const handleChange = (e) => {
     setCount(e.target.value);
@@ -43,9 +49,19 @@ const ItemCard = (props) => {
 
   const showAddButton = () => {
     if (count > 0) {
-      return <button className="card-bottom" onClick={handleClick}>Add to cart</button>
+      return ( 
+        <button className="card-bottom" onClick={handleClick}>
+          <FontAwesomeIcon icon={faPlusCircle} className="icon" />
+          Add to cart
+        </button>
+      );
     } else {
-      return <button className="card-bottom" disabled onClick={handleClick}>Add to cart</button>
+      return (
+      <button className="card-bottom" disabled onClick={handleClick}>
+        <FontAwesomeIcon icon={faPlusCircle} className="icon" />
+        Add to cart
+      </button>
+      )
     }
   }
 
@@ -53,6 +69,7 @@ const ItemCard = (props) => {
     if (productPage) {
       return (
         <div className="container">
+          <img src={photoList[product.prodId]} alt={product.title} className="large-pic" />
           <p>Price: ${Number(product.price).toFixed(2)}</p>
           <label>
             Quantity:
@@ -69,6 +86,7 @@ const ItemCard = (props) => {
       return (
         <div className="card">
           <h2>{product.title}</h2>
+          <img src={photoList[product.prodId]} alt={product.title} className="small-pic" />
           <p>Price: ${Number(product.price).toFixed(2)}</p>
           <label>
             Quantity:
