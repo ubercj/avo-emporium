@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import uniqid from 'uniqid';
+import { Link } from 'react-router-dom';
 
 const ItemCard = (props) => {
-  const { cart, setCart, product } = props;
+  const { cart, setCart, product, productPage } = props;
 
   const [count, setCount] = useState(0);
 
@@ -48,6 +49,14 @@ const ItemCard = (props) => {
     }
   }
 
+  const showLink = () => {
+    if (productPage) {
+      return <Link to="/">Back</Link>;
+    } else {
+      return <Link to={`/products/${product.prodId}`}>More info</Link>;
+    }
+  }
+
   return (
     <div className="card">
       <h2>{product.title}</h2>
@@ -61,6 +70,7 @@ const ItemCard = (props) => {
           />
         </label>
       </div>
+      {showLink()}
       {showAddButton()}
     </div>
   )

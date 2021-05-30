@@ -57,12 +57,16 @@ const CartCard = (props) => {
     }
   }
 
+  const calculateTotal = () => {
+    return product.count * product.price
+  }
+
   return (
     <div className="card in-cart">
       <h4>{product.title}</h4>
       {displayCount(wantToChange)}
       <p>Price: ${Number(product.price).toFixed(2)}</p>
-      <p>Total Cost: ${(product.count * product.price).toFixed(2)}</p>
+      <p>Total Cost: ${calculateTotal().toFixed(2)}</p>
       <button
         className="card-bottom"
         onClick={() => removeFromCart(product, cart)}>

@@ -11,6 +11,7 @@ html {
 body {
   margin: 0;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #eee;
 }
 
 nav {
@@ -71,6 +72,14 @@ a:link {
   width: 50%;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  
+  width: 80%;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -79,12 +88,4 @@ a:link {
   border: 1px solid black;
   border-radius: 3px;
   margin-bottom: 10px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-
-  width: 80%;
 }

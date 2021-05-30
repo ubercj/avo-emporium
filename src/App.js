@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import HomePage from "./components/HomePage";
 import CartPage from "./components/CartPage";
 import CheckoutPage from './components/CheckoutPage';
+import ItemPage from './components/ItemPage';
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -21,6 +22,7 @@ const App = () => {
           <CartPage cart={cart} setCart={setCart} />}
         />
         <Route exact path="/checkout" component={CheckoutPage} />
+        <Route exact path="/products/:id" children={<ItemPage cart={cart} setCart={setCart} />} />
         <Redirect to='/' />
       </Switch>
     </BrowserRouter>
