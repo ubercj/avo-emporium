@@ -69,7 +69,7 @@ const CartCard = (props) => {
 
   return (
     <div className="card in-cart">
-      <h4>{product.title}</h4>
+      <h2>{product.title}</h2>
       <img src={photoList[product.prodId]} alt={product.title} className="small-pic" />
       {displayCount(wantToChange)}
       <p>Price: ${Number(product.price).toFixed(2)}</p>

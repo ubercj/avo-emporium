@@ -78,8 +78,8 @@ const ItemCard = (props) => {
               onChange={handleChange}
             />
           </label>
-          <Link to="/">Back</Link>
           {showAddButton()}
+          <Link to="/" className="info">Back</Link>
         </div>
       );
     } else {
@@ -95,8 +95,8 @@ const ItemCard = (props) => {
               onChange={handleChange}
             />
           </label>
-          <Link to={`/products/${product.prodId}`}>More info</Link>
           {showAddButton()}
+          <Link to={`/products/${product.prodId}`} className="info">More info</Link>
         </div>
       );
     }

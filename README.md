@@ -22,9 +22,35 @@ So, this is the approach I took with the items, i.e. creating a factory function
 
 #### Importing images
 
-[React documentation](https://create-react-app.dev/docs/using-the-public-folder)
-[webpack documentation](https://webpack.js.org/guides/dependency-management/#require-context)
-[Stack Overflow thread](https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack)
+I had a heck of a time figuring out how to access the images in my assets/images folder. It turns out, in React, you can't just link straight to the relative path of the image file. According to the [React documentation](https://create-react-app.dev/docs/using-the-public-folder), you're supposed to import images one-by-one like modules. This would be fine if I only wanted to use a couple of images in a component, but in my case I wanted an `img` element in one of my components that uses a different file as a source depending on a variable.
+
+Luckily, I found this [Stack Overflow thread](https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack) which provides a solution to import all of the images at once. This particular solution required a quick dive into the [webpack documentation](https://webpack.js.org/guides/dependency-management/#require-context) to understand `require.context()`.
+
+So in the end, I ended up using a "photos" module with the suggested solution:
+
+```
+const importPhotos = (r) => {
+  return r.keys().map(r);
+}
+
+const photos = importPhotos(require.context('../assets/images/', false, /\.(png|jpg)$/));
+```
+
+`context.require()` returns a __function__, so you have to call `r.keys().map(r)` to get an array you can work with.
+
+There's one more wrinkle, though. The array I got from the above solution is an array __*of objects*__, so to get a url that you can actually pass into `<img src="">`, you have to access the property called "default" on each of the objects in the array. So I ended up doing this:
+
+```
+const photoList = photos.map((photo) => photo.default);
+```
+
+And then to get the correct photo to the correct product, I matched its index in the mapped array with its product ID like so:
+
+```
+src={photoList[product.prodId]}
+```
+
+There's almost certainly a better way to do this. Adding more images to the folder would make me have to go back and reassign product IDs to make sure the right photos go to the right products. If I get a chance, I might refactor this into a more sustainable solution. But it will work for the purposes of this project.
 
 ### Handling item quantities in the shopping cart
 
