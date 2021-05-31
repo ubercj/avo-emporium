@@ -7,6 +7,10 @@ const HomePage = (props) => {
 
   return (
     <div className="container">
+      <header className="container">
+        <h1>Avocado Toast Essentials</h1>
+        <h2>for the classy millenial</h2>
+      </header>
       <section className="store grid">
         <ItemCard cart={cart} setCart={setCart} product={inventory.avocado}/>
         <ItemCard cart={cart} setCart={setCart} product={inventory.sdBread}/>

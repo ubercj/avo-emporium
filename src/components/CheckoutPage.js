@@ -12,6 +12,7 @@ const CheckoutPage = () => {
         <img src={doge} alt="A doggy" className="xtra-large-pic" />
         <p>For more information, please refer to <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noreferrer"><span>this guide</span></a>.</p>
         <Link to="/cart" className="info">Back to Cart</Link>
+        <p className="fine-print">AvoEmporium is not responsible for evictions/foreclosures if you spend all of your rent money on avocado toast.</p>
       </div>
     </div>
   )
