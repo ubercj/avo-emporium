@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/avo-emporium/static/css/main.c8e9dd51.chunk.css",
+    "main.js": "/avo-emporium/static/js/main.345434a1.chunk.js",
+    "main.js.map": "/avo-emporium/static/js/main.345434a1.chunk.js.map",
+    "runtime-main.js": "/avo-emporium/static/js/runtime-main.89047150.js",
+    "runtime-main.js.map": "/avo-emporium/static/js/runtime-main.89047150.js.map",
+    "static/js/2.00891258.chunk.js": "/avo-emporium/static/js/2.00891258.chunk.js",
+    "static/js/2.00891258.chunk.js.map": "/avo-emporium/static/js/2.00891258.chunk.js.map",
+    "index.html": "/avo-emporium/index.html",
+    "static/css/main.c8e9dd51.chunk.css.map": "/avo-emporium/static/css/main.c8e9dd51.chunk.css.map",
+    "static/js/2.00891258.chunk.js.LICENSE.txt": "/avo-emporium/static/js/2.00891258.chunk.js.LICENSE.txt",
+    "static/media/avocado.jpg": "/avo-emporium/static/media/avocado.a0817550.jpg",
+    "static/media/butter-knife.jpg": "/avo-emporium/static/media/butter-knife.dfc80ef6.jpg",
+    "static/media/chefs-knife.jpg": "/avo-emporium/static/media/chefs-knife.69ae5215.jpg",
+    "static/media/doge.571a5101.jpg": "/avo-emporium/static/media/doge.571a5101.jpg",
+    "static/media/eggs.jpg": "/avo-emporium/static/media/eggs.3279be6f.jpg",
+    "static/media/sourdough-bread.jpg": "/avo-emporium/static/media/sourdough-bread.ccfd0674.jpg",
+    "static/media/spoon.jpg": "/avo-emporium/static/media/spoon.0e364545.jpg",
+    "static/media/toaster.jpg": "/avo-emporium/static/media/toaster.dd7f806a.jpg",
+    "static/media/wheat-bread.jpg": "/avo-emporium/static/media/wheat-bread.6389070e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.89047150.js",
+    "static/js/2.00891258.chunk.js",
+    "static/css/main.c8e9dd51.chunk.css",
+    "static/js/main.345434a1.chunk.js"
+  ]
+}
