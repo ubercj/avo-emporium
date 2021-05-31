@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { useState } from 'react';
 import Nav from "./components/Nav";
 import HomePage from "./components/HomePage";
@@ -10,7 +10,7 @@ const App = () => {
   const [cart, setCart] = useState([]);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Nav cart={cart} />
       <Switch>
         <Route exact path="/"
@@ -25,7 +25,7 @@ const App = () => {
         <Route exact path="/products/:id" children={<ItemPage cart={cart} setCart={setCart} />} />
         <Redirect to='/' />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
