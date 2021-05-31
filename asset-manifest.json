@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/avo-emporium/static/css/main.ef259dfa.chunk.css",
-    "main.js": "/avo-emporium/static/js/main.345434a1.chunk.js",
-    "main.js.map": "/avo-emporium/static/js/main.345434a1.chunk.js.map",
+    "main.css": "/avo-emporium/static/css/main.cef36ae9.chunk.css",
+    "main.js": "/avo-emporium/static/js/main.80b14b3b.chunk.js",
+    "main.js.map": "/avo-emporium/static/js/main.80b14b3b.chunk.js.map",
     "runtime-main.js": "/avo-emporium/static/js/runtime-main.89047150.js",
     "runtime-main.js.map": "/avo-emporium/static/js/runtime-main.89047150.js.map",
     "static/js/2.00891258.chunk.js": "/avo-emporium/static/js/2.00891258.chunk.js",
     "static/js/2.00891258.chunk.js.map": "/avo-emporium/static/js/2.00891258.chunk.js.map",
     "index.html": "/avo-emporium/index.html",
-    "static/css/main.ef259dfa.chunk.css.map": "/avo-emporium/static/css/main.ef259dfa.chunk.css.map",
+    "static/css/main.cef36ae9.chunk.css.map": "/avo-emporium/static/css/main.cef36ae9.chunk.css.map",
     "static/js/2.00891258.chunk.js.LICENSE.txt": "/avo-emporium/static/js/2.00891258.chunk.js.LICENSE.txt",
     "static/media/avocado.jpg": "/avo-emporium/static/media/avocado.a0817550.jpg",
     "static/media/butter-knife.jpg": "/avo-emporium/static/media/butter-knife.dfc80ef6.jpg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.89047150.js",
     "static/js/2.00891258.chunk.js",
-    "static/css/main.ef259dfa.chunk.css",
-    "static/js/main.345434a1.chunk.js"
+    "static/css/main.cef36ae9.chunk.css",
+    "static/js/main.80b14b3b.chunk.js"
   ]
 }
