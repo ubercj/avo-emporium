@@ -1,6 +1,8 @@
 # Shopping Cart
 
-This is a project from The Odin Project. Read more about it [here](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/javascript/lessons/shopping-cart).
+Check it out live [here](https://ubercj.github.io/avo-emporium).
+
+The idea for this project comes from The Odin Project. Read more about it [here](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/javascript/lessons/shopping-cart).
 
 ### State, Props, and the React Router
 
