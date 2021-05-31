@@ -10,7 +10,7 @@ const App = () => {
   const [cart, setCart] = useState([]);
 
   return (
-    <HashRouter>
+    <HashRouter basename="/avo-emporium">
       <Nav cart={cart} />
       <Switch>
         <Route exact path="/"
